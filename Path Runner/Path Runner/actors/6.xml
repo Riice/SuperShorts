@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<actor id="id380104" PGFVersion="0.19" GSCVersion="0.10.4">
+  <attributes>
+    <text id="name">Stage</text>
+    <real id="time">0</real>
+    <point id="position">
+      <real id="x">0</real>
+      <real id="y">0</real>
+    </point>
+    <size id="size">
+      <real id="width">120</real>
+      <real id="height">120</real>
+    </size>
+    <angle id="rotation">0</angle>
+    <color id="color">
+      <real id="red">1</real>
+      <real id="green">1</real>
+      <real id="blue">1</real>
+      <real id="alpha">1</real>
+    </color>
+    <image id="image" />
+    <text id="tags" />
+    <boolean id="preloadArt">true</boolean>
+  </attributes>
+  <behaviors>
+    <behavior id="id658472" class="RuleBehavior" enabled="true">
+      <attributes>
+        <text id="name">Click</text>
+        <text id="bundleName">Rule.behavior</text>
+        <real id="compoundConditionKind">0</real>
+      </attributes>
+      <conditions>
+        <condition id="id266541" eventType="mouse position" pluginPredicateTypeIndex="0" class="MousePosition">
+          <attributes>
+            <text id="name">default name</text>
+            <index id="conditionType">0</index>
+          </attributes>
+          <predicate type="mousePosition" conditionType="over actor">
+            <attributes />
+          </predicate>
+        </condition>
+        <condition id="id529358" eventType="mouse button" pluginPredicateTypeIndex="0" class="MouseButton">
+          <attributes>
+            <text id="name">default name</text>
+            <index id="conditionType">0</index>
+          </attributes>
+          <predicate type="mouse" mouseState="down">
+            <attributes />
+          </predicate>
+        </condition>
+        <condition id="id951117" eventType="mouse position" pluginPredicateTypeIndex="0" class="AttributeCondition">
+          <attributes>
+            <index id="conditionType">1</index>
+            <text id="subjectAttribute">game.attributes.id995220</text>
+            <text id="name">default name</text>
+          </attributes>
+          <predicate type="boolean">
+            <attributes>
+              <index id="RHS">0</index>
+            </attributes>
+          </predicate>
+        </condition>
+      </conditions>
+      <behaviors>
+        <behavior id="id515848" class="RuleBehavior" enabled="true">
+          <attributes>
+            <text id="name">Make Move</text>
+            <text id="bundleName">Rule.behavior</text>
+            <real id="compoundConditionKind">0</real>
+          </attributes>
+          <conditions>
+            <condition id="id870223" eventType="mouse position" pluginPredicateTypeIndex="0" class="AttributeCondition">
+              <attributes>
+                <index id="conditionType">1</index>
+                <text id="subjectAttribute">game.attributes.id905927</text>
+                <text id="name">default name</text>
+              </attributes>
+              <predicate type="number">
+                <attributes>
+                  <text id="operator">&gt;=</text>
+                  <real id="RHS">
+                    <expression>
+                      <reference keypath="game.attributes.id315571" />
+                    </expression>
+                  </real>
+                </attributes>
+              </predicate>
+            </condition>
+          </conditions>
+          <behaviors>
+            <behavior id="id137770" class="ChangeTableValueAction" enabled="true">
+              <attributes>
+                <text id="name">Mouse X/Y</text>
+                <text id="bundleName">ChangeTableValue.behavior</text>
+                <text id="tableID">id746599</text>
+                <text id="rowNumber">
+                  <expression>
+                    <string>tableRowCount(</string>
+                    <reference keypath="game.attributes.id746599" />
+                    <string>)</string>
+                  </expression>
+                </text>
+                <array id="assignments">
+                  <tablecolumnassignment id="id537552">
+                    <text id="column" name="column">2</text>
+                    <text id="rhsvalue" name="rhsvalue">
+                      <expression>
+                        <reference keypath="game.devices.mouse.position.x" />
+                      </expression>
+                    </text>
+                  </tablecolumnassignment>
+                  <tablecolumnassignment id="id476221">
+                    <text id="column" name="column">3</text>
+                    <text id="rhsvalue" name="rhsvalue">
+                      <expression>
+                        <reference keypath="game.devices.mouse.position.y" />
+                      </expression>
+                    </text>
+                  </tablecolumnassignment>
+                </array>
+              </attributes>
+            </behavior>
+            <behavior id="id189441" class="AddRemoveRowAction" enabled="true">
+              <attributes>
+                <text id="name">Add/Remove Row</text>
+                <text id="bundleName">AddRemoveRow.behavior</text>
+                <text id="tableID">id746599</text>
+                <index id="command">0</index>
+                <index id="location">1</index>
+                <text id="index" />
+              </attributes>
+            </behavior>
+            <behavior id="id526867" class="ChangeAttributeAction" enabled="true">
+              <attributes>
+                <text id="name">MoveCheck#</text>
+                <text id="bundleName">ChangeAttribute.behavior</text>
+                <text id="targetAttribute">game.attributes.id315571</text>
+                <text id="RHS">
+                  <expression>
+                    <string>tableRowCount(</string>
+                    <reference keypath="game.attributes.id746599" />
+                    <string>)-1</string>
+                  </expression>
+                </text>
+              </attributes>
+            </behavior>
+            <behavior id="id966368" class="ChangeAttributeAction" enabled="true">
+              <attributes>
+                <text id="name">MoveID ++</text>
+                <text id="bundleName">ChangeAttribute.behavior</text>
+                <text id="targetAttribute">game.attributes.id110903</text>
+                <text id="RHS">
+                  <expression>
+                    <reference keypath="game.attributes.id110903" />
+                    <string>+1</string>
+                  </expression>
+                </text>
+              </attributes>
+            </behavior>
+            <behavior id="id693746" class="RuleBehavior" enabled="true">
+              <attributes>
+                <text id="name">Spawn</text>
+                <text id="bundleName">Rule.behavior</text>
+                <real id="compoundConditionKind">0</real>
+              </attributes>
+              <conditions>
+                <condition id="id372626" eventType="mouse position" pluginPredicateTypeIndex="0" class="AttributeCondition">
+                  <attributes>
+                    <index id="conditionType">1</index>
+                    <text id="subjectAttribute">game.attributes.id905927</text>
+                    <text id="name">default name</text>
+                  </attributes>
+                  <predicate type="number">
+                    <attributes>
+                      <text id="operator">&gt;=</text>
+                      <real id="RHS">
+                        <expression>
+                          <reference keypath="game.attributes.id315571" />
+                        </expression>
+                      </real>
+                    </attributes>
+                  </predicate>
+                </condition>
+              </conditions>
+              <behaviors>
+                <behavior id="id831676" class="SpawnAction" enabled="true">
+                  <attributes>
+                    <text id="name">Spawn Actor</text>
+                    <text id="bundleName">Spawn.behavior</text>
+                    <text id="prototypeKey">id258996</text>
+                    <angle id="direction">45</angle>
+                    <index id="directionSpace">0</index>
+                    <real id="x">
+                      <expression>
+                        <string>tableCellValue(</string>
+                        <reference keypath="game.attributes.id746599" />
+                        <string>, tableRowCount(</string>
+                        <reference keypath="game.attributes.id746599" />
+                        <string>)-1, 2)</string>
+                      </expression>
+                    </real>
+                    <real id="y">
+                      <expression>
+                        <string>tableCellValue(</string>
+                        <reference keypath="game.attributes.id746599" />
+                        <string>, tableRowCount(</string>
+                        <reference keypath="game.attributes.id746599" />
+                        <string>)</string>
+                        <string>-1</string>
+                        <string>, 3)</string>
+                      </expression>
+                    </real>
+                    <index id="positionSpace">1</index>
+                    <index id="layerOrder">1</index>
+                  </attributes>
+                </behavior>
+              </behaviors>
+            </behavior>
+          </behaviors>
+        </behavior>
+        <behavior id="id568463" class="RuleBehavior" enabled="true">
+          <attributes>
+            <text id="name">Time rule</text>
+            <text id="bundleName">Rule.behavior</text>
+            <real id="compoundConditionKind">0</real>
+          </attributes>
+          <conditions>
+            <condition id="id327912" eventType="mouse position" pluginPredicateTypeIndex="0" class="AttributeCondition">
+              <attributes>
+                <index id="conditionType">1</index>
+                <text id="subjectAttribute">game.attributes.id905927</text>
+                <text id="name">default name</text>
+              </attributes>
+              <predicate type="number">
+                <attributes>
+                  <text id="operator">&gt;=</text>
+                  <real id="RHS">
+                    <expression>
+                      <reference keypath="game.attributes.id315571" />
+                    </expression>
+                  </real>
+                </attributes>
+              </predicate>
+            </condition>
+          </conditions>
+          <behaviors>
+            <behavior id="id678075" class="TimerBehavior" enabled="true">
+              <attributes>
+                <text id="name">After</text>
+                <text id="bundleName">Timer.behavior</text>
+                <index id="timerType">1</index>
+                <real id="interval">0.3</real>
+                <boolean id="runToCompletion">false</boolean>
+              </attributes>
+              <behaviors>
+                <behavior id="id286464" class="ChangeAttributeAction" enabled="true">
+                  <attributes>
+                    <text id="name">Drawing?</text>
+                    <text id="bundleName">ChangeAttribute.behavior</text>
+                    <text id="targetAttribute">game.attributes.id297076</text>
+                    <text id="RHS">true</text>
+                  </attributes>
+                </behavior>
+                <behavior id="id320958" class="ChangeTableValueAction" enabled="true">
+                  <attributes>
+                    <text id="name">Update _Draw</text>
+                    <text id="bundleName">ChangeTableValue.behavior</text>
+                    <text id="tableID">id356977</text>
+                    <text id="rowNumber">1</text>
+                    <array id="assignments">
+                      <tablecolumnassignment id="id480686">
+                        <text id="column" name="column">3</text>
+                        <text id="rhsvalue" name="rhsvalue">
+                          <expression>
+                            <string>tableCellValue(</string>
+                            <reference keypath="game.attributes.id746599" />
+                            <string>, (tableRowCount(</string>
+                            <reference keypath="game.attributes.id746599" />
+                            <string>)</string>
+                            <string>-1</string>
+                            <string>), 2)</string>
+                          </expression>
+                        </text>
+                      </tablecolumnassignment>
+                      <tablecolumnassignment id="id972856">
+                        <text id="column" name="column">4</text>
+                        <text id="rhsvalue" name="rhsvalue">
+                          <expression>
+                            <string>tableCellValue(</string>
+                            <reference keypath="game.attributes.id746599" />
+                            <string>, (tableRowCount(</string>
+                            <reference keypath="game.attributes.id746599" />
+                            <string>)</string>
+                            <string>-1</string>
+                            <string>), 3)</string>
+                          </expression>
+                        </text>
+                      </tablecolumnassignment>
+                    </array>
+                  </attributes>
+                </behavior>
+                <behavior id="id115221" class="SpawnAction" enabled="false">
+                  <attributes>
+                    <text id="name">Spawn Actor</text>
+                    <text id="bundleName">Spawn.behavior</text>
+                    <text id="prototypeKey">id258996</text>
+                    <angle id="direction">0</angle>
+                    <index id="directionSpace">1</index>
+                    <real id="x">
+                      <expression>
+                        <reference keypath="game.devices.mouse.position.x" />
+                      </expression>
+                    </real>
+                    <real id="y">
+                      <expression>
+                        <reference keypath="game.devices.mouse.position.y" />
+                      </expression>
+                    </real>
+                    <index id="positionSpace">1</index>
+                    <index id="layerOrder">0</index>
+                  </attributes>
+                </behavior>
+                <behavior id="id220262" class="SpawnAction" enabled="true">
+                  <attributes>
+                    <text id="name">Spawn Actor</text>
+                    <text id="bundleName">Spawn.behavior</text>
+                    <text id="prototypeKey">id857374</text>
+                    <angle id="direction">0</angle>
+                    <index id="directionSpace">1</index>
+                    <real id="x">220</real>
+                    <real id="y">220</real>
+                    <index id="positionSpace">1</index>
+                    <index id="layerOrder">0</index>
+                  </attributes>
+                </behavior>
+              </behaviors>
+            </behavior>
+          </behaviors>
+        </behavior>
+        <behavior id="id142342" class="TimerBehavior" enabled="true">
+          <attributes>
+            <text id="name">Every</text>
+            <text id="bundleName">Timer.behavior</text>
+            <index id="timerType">0</index>
+            <real id="interval">0.3</real>
+            <boolean id="runToCompletion">false</boolean>
+          </attributes>
+          <behaviors>
+            <behavior id="id817027" class="ChangeAttributeAction" enabled="true">
+              <attributes>
+                <text id="name">Change Attribute</text>
+                <text id="bundleName">ChangeAttribute.behavior</text>
+                <text id="targetAttribute">game.attributes.id331865</text>
+                <text id="RHS">
+                  <expression>
+                    <reference keypath="game.attributes.id331865" />
+                    <string>+0.3</string>
+                  </expression>
+                </text>
+              </attributes>
+            </behavior>
+          </behaviors>
+        </behavior>
+      </behaviors>
+      <elseBehaviors>
+        <behavior id="id526937" class="ChangeAttributeAction" enabled="true">
+          <attributes>
+            <text id="name">Change Attribute</text>
+            <text id="bundleName">ChangeAttribute.behavior</text>
+            <text id="targetAttribute">game.attributes.id297076</text>
+            <text id="RHS">false</text>
+          </attributes>
+        </behavior>
+      </elseBehaviors>
+    </behavior>
+  </behaviors>
+  <aspects>
+    <graphics>
+      <attributes>
+        <boolean id="visible">true</boolean>
+        <enumeration id="blendingMode">0</enumeration>
+        <enumeration id="horizontalWrap">0</enumeration>
+        <enumeration id="verticalWrap">0</enumeration>
+        <enumeration id="horizontalAnchor">0</enumeration>
+        <enumeration id="verticalAnchor">0</enumeration>
+        <boolean id="flipHorizontally">false</boolean>
+        <boolean id="flipVertically">false</boolean>
+        <integer id="tileWidth">0</integer>
+        <integer id="tileHeight">0</integer>
+      </attributes>
+    </graphics>
+    <motion>
+      <attributes>
+        <point id="linearVelocity">
+          <real id="x">0</real>
+          <real id="y">0</real>
+        </point>
+        <real id="angularVelocity">0</real>
+        <real id="maxSpeed">0</real>
+        <boolean id="applyMaxSpeed">false</boolean>
+      </attributes>
+    </motion>
+    <physics>
+      <attributes>
+        <real id="density">1</real>
+        <real id="friction">3</real>
+        <real id="restitution">1</real>
+        <boolean id="fixedRotation">false</boolean>
+        <boolean id="movable">true</boolean>
+        <enumeration id="collisionShape">0</enumeration>
+        <real id="drag">0</real>
+        <real id="angularDrag">0</real>
+      </attributes>
+    </physics>
+  </aspects>
+</actor>

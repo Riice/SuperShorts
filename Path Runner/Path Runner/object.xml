@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<game GSCVersion="0.10.4" PGFVersion="0.19" title="My Great Project">
+  <tags />
+  <resolutionIndependence>0</resolutionIndependence>
+  <instructions>Add game instructions here.</instructions>
+  <resolution>0</resolution>
+  <longDescription>A simple game.</longDescription>
+  <prototypes>
+    <actor id="id550720" />
+    <actor id="id486895" />
+    <actor id="id663429" />
+    <actor id="id702655" />
+    <actor id="id258996" />
+    <actor id="id380104" />
+    <actor id="id857374" />
+  </prototypes>
+  <plugins />
+  <scenes>
+    <scene id="id453174" />
+  </scenes>
+  <attributes>
+    <text id="name">default name</text>
+    <real id="time">0</real>
+    <size id="displaySize">
+      <real id="width">480</real>
+      <real id="height">320</real>
+    </size>
+    <text id="actorTags" />
+    <table id="id746599" name="_Moves">Table 1</table>
+    <boolean id="id995220" name="Start">false</boolean>
+    <integer id="id905927" name="Move Total">4</integer>
+    <integer id="id315571" name="Moves">0</integer>
+    <text id="id466606" name="State">Ready?</text>
+    <integer id="id110903" name="MoveID">0</integer>
+    <boolean id="id824289" name="Block">false</boolean>
+    <real id="id331865" name="ClickTime">0</real>
+    <table id="id356977" name="_Draw">Table 1</table>
+    <boolean id="id297076" name="Drawing">false</boolean>
+  </attributes>
+</game>

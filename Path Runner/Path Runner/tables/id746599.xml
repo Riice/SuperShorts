@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table version="0.000000" name="_Moves" numRows="1" numCols="7" flags="9" tableType="0" tableSkew="0">
+    <rows>
+        <row id="0" name=""/>
+    </rows>
+    <columns>
+        <column id="0" name="ID" type="2" readonly="0">0</column>
+        <column id="1" name="X" type="3" readonly="0">1</column>
+        <column id="2" name="Y" type="3" readonly="0">0</column>
+        <column id="3" name="Line" type="4" readonly="0">False</column>
+        <column id="4" name="Wall" type="4" readonly="0">False</column>
+        <column id="5" name="P_X" type="3" readonly="0">0</column>
+        <column id="6" name="P_Y" type="3" readonly="0">0</column>
+    </columns>
+</table>
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<table version="0.000000" name="_Draw" numRows="1" numCols="6" flags="9" tableType="0" tableSkew="0">
+    <rows>
+        <row id="0" name=""/>
+    </rows>
+    <columns>
+        <column id="0" name="Magnitude" type="3" readonly="0">0</column>
+        <column id="1" name="Angle" type="3" readonly="0">0</column>
+        <column id="2" name="DownX" type="3" readonly="0">4</column>
+        <column id="3" name="DownY" type="3" readonly="0">0</column>
+        <column id="4" name="UpX" type="3" readonly="0">0</column>
+        <column id="5" name="UpY" type="3" readonly="0">0</column>
+    </columns>
+</table>
+
